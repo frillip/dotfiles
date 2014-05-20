@@ -76,8 +76,13 @@ done
 #hostname -s | tr a-z A-Z | toilet -F border:crop -f future
 #hostname -s | tr a-z A-Z | figlet -ctf roman
 
-# ice blue
-echo -ne "\033[38;5;75m"
+# get a number dependent on hostname, in this case the crc32
+SUM=$(echo $HOSTNAME | cksum | cut -d' ' -f1)
+#SUM=$RANDOM
+# use modulo operator to get remainer from integer division. This restricts the
+# range.  colours: 0-254 (%255), 16-201 are acceptable
+COLOUR=$(( ($SUM % 185) +15 ))
+echo -ne "\033[38;5;${COLOUR}m"
 
 # figlet -t is broken on mac os x. Try -w instead.
 hostname -s | sed 's/.*/\u&/' | figlet -cf ~/.config/figlet/roman.flf -w $COLUMNS
