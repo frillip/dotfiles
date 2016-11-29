@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from __future__ import division
 from hashlib import md5
-from sys import argv
+from sys import argv,stdin
 
 # preselected suitable (vibrant enough) colours with a fair sample
 x256_colours = [1,2,3,5,6,7,8] + range(9,15) + range(34,52,3) + range(76,87,2) + range(196,231,2)
@@ -33,4 +33,7 @@ if len(argv) <= 1:
     for c in x256_colours:
         print wrap(c,c)
 else:
-    print deterministic_x256(*argv[1:])
+    if argv[1] == '-':
+        print deterministic_x256("".join(stdin))
+    else:
+        print deterministic_x256(*argv[1:])

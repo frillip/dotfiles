@@ -136,7 +136,7 @@ math() {
 export HOSTNAME
 
 # set from hostname
-export SYSTEM_COLOUR=$(~/bin/system-colour.py $HOSTNAME)
+export SYSTEM_COLOUR=$(~/bin/system-colour.py - < /etc/hosts)
 [ $TMUX ] && tmux set -g status-left-bg colour${SYSTEM_COLOUR} &>/dev/null
 
 PROMPT="\$(__exit_warn)

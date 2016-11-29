@@ -56,7 +56,7 @@ export GCC_COLORS=1
 echo -ne "\n\033[37m> Welcome to $HOSTNAME, $USER!\033[0m "
 
 # set from hostname
-export SYSTEM_COLOUR=$(~/bin/system-colour.py $HOSTNAME)
+export SYSTEM_COLOUR=$(~/bin/system-colour.py - < /etc/hosts)
 [ $TMUX ] && tmux set -g status-left-bg colour${SYSTEM_COLOUR} &>/dev/null
 
 # AUTOMATIC TMUX
