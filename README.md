@@ -27,6 +27,10 @@ Specific:
 
 See `home/.aliases` and `bin/` for some useful shortcuts.
 
+# Features
+* automatic SSH reloading and detection on prompt
+
+
 
 # Dotfiles
 Run `install.sh` to install to your home directory, **overwriting all required

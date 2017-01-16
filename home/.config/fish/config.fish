@@ -29,7 +29,7 @@ set -x LANG en_GB.UTF-8
 # and load the standard library
 set -x BC_ENV_ARGS "$HOME/.bcrc -l"
 
-function tmux_update_env --on-event fish_prompt
+function tmux_update_env --on-event fish_preexec
     # when an SSH connection is re-established, so is the agent connection.
     # Reload it automatically.
     # export is supported in later fish releases.

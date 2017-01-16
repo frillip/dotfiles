@@ -61,3 +61,6 @@
 [submodule "home/.vim/bundle/vim-ps1"]
 	path = home/.vim/bundle/vim-ps1
 	url = git://github.com/PProvost/vim-ps1.git
+[submodule "home/.bash-preexec"]
+	path = home/.bash-preexec
+	url = git://github.com/rcaloras/bash-preexec.git

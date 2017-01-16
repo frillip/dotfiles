@@ -126,8 +126,6 @@ function onprompt {
 		echo -ne "\\033k$LABEL\\033\\\\"
 	fi
 
-	_bash_history_sync
-    _tmux_update_env
 }
 
 PROMPT_COMMAND=onprompt
@@ -188,6 +186,14 @@ PS1="\$(__exit_warn)\n\[\e[38;5;${SYSTEM_COLOUR}m\]\u@\H:\$PWD\[\e[90m\]\$(__git
 
 # aliases shared between fish and bash
 source ~/.aliases
+
+function precmd {
+	# reload history to get immediate update because my computer is fast, yo.
+	_bash_history_sync
+}
+function preexec {
+    _tmux_update_env
+}
 
 # get new or steal existing tmux
 function tm {
@@ -257,3 +263,6 @@ stty -ixon -ixoff
 # http://superuser.com/questions/267771/bash-completion-makes-bash-start-slowly
 trap 'deferred; trap USR1' USR1
 { sleep 0.1 ; builtin kill -USR1 $$ ; } & disown
+
+# preexec and precmd like zsh
+source ~/.bash-preexec/bash-preexec.sh

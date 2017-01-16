@@ -181,7 +181,7 @@ test $TMUX \
 
 # Update TMUX title with path using hook
 # Other hooks: http://zsh.sourceforge.net/Doc/Release/Functions.html
-chpwd() {
+function chpwd {
 	# only if TMUX is running, and it's safe to assume the user wants to have the tab automatically named
 	if [ -n "$TMUX" ] && [ $TMUX_PRIMARY_PANE ]; then
 
@@ -193,9 +193,12 @@ chpwd() {
 	fi
 }
 
-precmd() {
+function precmd {
 	# reload history to get immediate update because my computer is fast, yo.
 	fc -R
+}
+
+function preexec {
     _tmux_update_env
 }
 
