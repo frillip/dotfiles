@@ -1,7 +1,6 @@
 #!/bin/bash
 git subtree pull -m 'update subtree' --squash --prefix=home/.vim/bundle/gruvbox https://github.com/morhetz/gruvbox.git master
 git subtree pull -m 'update subtree' --squash --prefix=home/.vim/bundle/supertab https://github.com/ervandew/supertab.git master
-git subtree pull -m 'update subtree' --squash --prefix=home/.vim/bundle/fugitive https://github.com/tpope/vim-fugitive.git master
 git subtree pull -m 'update subtree' --squash --prefix=home/.vim/bundle/trailing-whitespace https://github.com/vim-scripts/trailing-whitespace.git master
 git subtree pull -m 'update subtree' --squash --prefix=home/.vim/bundle/vim-multiple-cursors https://github.com/terryma/vim-multiple-cursors.git master
 git subtree pull -m 'update subtree' --squash --prefix=home/.vim/bundle/vim-css-color https://github.com/ap/vim-css-color.git master
