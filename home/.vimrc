@@ -102,10 +102,12 @@ set background=dark
 let g:gruvbox_invert_tabline = 1
 let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_contrast_light = 'hard'
-let g:gruvbox_italic = 1
+" TODO fix this with terminfo databases
+" let g:gruvbox_italic = 1
 
 " TODO add test for truecolour capability
 if (has("termguicolors"))
+    " TODO set conditionally when Tc support is done
     set termguicolors
 endif
 
