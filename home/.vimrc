@@ -108,7 +108,7 @@ let g:gruvbox_contrast_light = 'hard'
 " TODO add test for truecolour capability
 if (has("termguicolors"))
     " TODO set conditionally when Tc support is done
-    set termguicolors
+    "set termguicolors
 endif
 
 colorscheme gruvbox
