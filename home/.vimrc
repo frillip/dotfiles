@@ -3,7 +3,6 @@ runtime bundle/pathogen/autoload/pathogen.vim
 
 set nocompatible
 call pathogen#infect()
-set laststatus=2
 
 " http://tooky.co.uk/2010/04/08/there-was-a-problem-with-the-editor-vi-git-on-mac-os-x.html
 " If this causes vim to exit with non-zero and breaks git on OS X, investigate.
@@ -255,12 +254,15 @@ command Retab normal! gg=G
 " magically fold everything
 map <F2> :set foldmethod=indent<CR><CR>
 
-" airline is lighter than powerline.
-" Old powerline colours are nice.
-let g:airline_theme='powerlineish'
-let g:airline_left_sep=''
-let g:airline_right_sep=''
-let g:airline_section_c='%<%F%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#'
+" airline is lighter than powerline. Lightline is lighter than airline (100ms
+" from 200ms measured with (n)vim --startuptime)
+" IMO powerline colours go well with any other colorscheme
+" " TODO add readlonly flag
+set laststatus=2
+set noshowmode
+let g:lightline = {
+      \ 'colorscheme': 'powerline',
+      \ }
 
 " Unsurprisingly, I want to edit dotfiles and simlinks!
 let g:ctrlp_show_hidden = 1
