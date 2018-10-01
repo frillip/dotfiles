@@ -14,7 +14,7 @@ AKA the OSes I actively use.
 * ~~Ubuntu 14.04 LTS~~
 
 
-# My workflow
+# Software
 
 General:
 
@@ -27,9 +27,6 @@ so I don't use it)
 * `ack` : grep alternative for rebasing and source code exploration (I also use ripgrep)
 * `ssh` : secure remote shell (obvious I know)
 * `gnupg2`: OpenPGP cryptographic suite
-
-Specific:
-
 * `ipython` : interactive python shell
 * `ansible` : idempotent, agentless configuration management
 * `httpie` : curl alternative with better UX
@@ -44,6 +41,8 @@ Specific:
 * `tig` : Git history visualiser
 * `sox`/`ffmpeg`/`gstreamer` Tools to convert multimedia
 * `httrack` : a website crawler better than wget (i.e. it works)
+* `gruvbox` : A calm colorscheme with good enough contrast. I moved from solarised.
+* `kitty` : GPU accelerated terminal (see also: `alacritty`)
 
 Recommended font: https://github.com/adobe-fonts/source-code-pro
 
