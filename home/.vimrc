@@ -257,12 +257,11 @@ map <F2> :set foldmethod=indent<CR><CR>
 " airline is lighter than powerline. Lightline is lighter than airline (100ms
 " from 200ms measured with (n)vim --startuptime)
 " IMO powerline colours go well with any other colorscheme
-" " TODO add readlonly flag
 set laststatus=2
 set noshowmode
 let g:lightline = {
       \ 'colorscheme': 'powerline',
-      \ }
+  \ }
 
 " Unsurprisingly, I want to edit dotfiles and simlinks!
 let g:ctrlp_show_hidden = 1
