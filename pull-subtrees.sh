@@ -18,3 +18,4 @@ git subtree pull -m 'update subtree' --squash --prefix=home/.vim/bundle/ctrlp.vi
 git subtree pull -m 'update subtree' --squash --prefix=home/.vim/bundle/vim-uci https://github.com/cmcaine/vim-uci.git master
 git subtree pull -m 'update subtree' --squash --prefix=home/.vim/bundle/requirements.txt.vim https://github.com/raimon49/requirements.txt.vim.git master
 git subtree pull -m 'update subtree' --squash --prefix=home/.vim/bundle/vim-polyglot https://github.com/sheerun/vim-polyglot.git master
+git subtree pull -m 'update subtree' --squash --prefix=home/.vim/bundle/lightline.vim https://github.com/itchyny/lightline.vim.git master
