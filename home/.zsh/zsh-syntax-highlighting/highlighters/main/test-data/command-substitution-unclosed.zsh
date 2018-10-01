@@ -1,5 +1,6 @@
+#!/usr/bin/env zsh
 # -------------------------------------------------------------------------------------------------
-# Copyright (c) 2015 zsh-syntax-highlighting contributors
+# Copyright (c) 2018 zsh-syntax-highlighting contributors
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without modification, are permitted
@@ -27,11 +28,17 @@
 # vim: ft=zsh sw=2 ts=2 et
 # -------------------------------------------------------------------------------------------------
 
-BUFFER='(A=1)'
+BUFFER=$': foo$(echo bar'
 
 expected_region_highlight=(
-  "1 1 reserved-word" # (
-  "2 4 assign" # A=1
-  "4 4 default" # 1
-  "5 5 reserved-word" # )
+  '1 1 builtin' # :
+  '3 15 default' # foo$(echo bar
+  '6 15 command-substitution' # $(echo bar
+  '6 7 command-substitution-delimiter' # $(
+  '8 11 builtin' # echo
+  '13 15 default' # bar
 )
+
+if [[ ${(z):-'$('} == '$( ' ]]; then # ignore zsh 5.0.8 bug
+  expected_region_highlight[2]='3 16 default' # foo$(echo bar
+fi

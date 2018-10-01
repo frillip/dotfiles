@@ -1,5 +1,6 @@
+#!/usr/bin/env zsh
 # -------------------------------------------------------------------------------------------------
-# Copyright (c) 2015 zsh-syntax-highlighting contributors
+# Copyright (c) 2018 zsh-syntax-highlighting contributors
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without modification, are permitted
@@ -27,11 +28,16 @@
 # vim: ft=zsh sw=2 ts=2 et
 # -------------------------------------------------------------------------------------------------
 
-BUFFER='(A=1)'
+BUFFER=$': --foo=<(echo bar) "<(:)"'
 
 expected_region_highlight=(
-  "1 1 reserved-word" # (
-  "2 4 assign" # A=1
-  "4 4 default" # 1
-  "5 5 reserved-word" # )
+  '1 1 builtin' # :
+  '3 19 double-hyphen-option' # --foo=<(echo bar)
+  '9 19 process-substitution' # <(echo bar)
+  '9 10 process-substitution-delimiter' # <(
+  '11 14 builtin' # echo
+  '16 18 default' # bar
+  '19 19 process-substitution-delimiter' # )
+  '21 26 default' # "<(:)"
+  '21 26 double-quoted-argument' # "<(:)"
 )
