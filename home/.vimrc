@@ -112,10 +112,11 @@ endif
 
 colorscheme gruvbox
 
-" remove grey background colour (better contrast) (black or NONE) -- try
-" gruvbox grey first. Maybe enable if truecolour isn't available
+" remove grey background colour (better contrast) (black or NONE)
 "highlight Normal ctermbg=black guibg=black
 "highlight NonText ctermbg=black guibg=black
+
+highlight LineNr ctermfg=grey ctermbg=235 guibg=244
 
 " anti typo (command aliases)
 " source: .viminfo
