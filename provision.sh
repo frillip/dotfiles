@@ -1,4 +1,6 @@
 #!/bin/bash
+# This script installs dependencies required by dotfiles, and then the configuration files with git repo.
+
 set -e
 set -x
 # curl -sL https://github.com/naggie/dotfiles/raw/master/provision.sh | bash && bash
@@ -63,4 +65,7 @@ cd ~
 git clone https://github.com/naggie/dotfiles.git
 
 cd dotfiles
+
+./etc/powerline-patched/install.sh
+
 ./install.sh

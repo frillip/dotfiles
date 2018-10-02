@@ -1,4 +1,6 @@
 #!/bin/bash
+# This script configures the user account
+
 cd $(dirname $0)
 
 PLATFORM=$(uname)
@@ -75,8 +77,6 @@ if [ -n "$TMUX" ]; then
 else
 	warning "Not inside tmux, so can't tell tmux to reload"
 fi
-
-./etc/powerline-patched/install.sh
 
 if [ $PLATFORM == 'Darwin' ]; then
     # 'Gah! Darwin!? XQuartz crashes in an annoying focus-stealing loop with this .xinirc. Removing...'
