@@ -261,7 +261,14 @@ set laststatus=2
 set noshowmode
 let g:lightline = {
       \ 'colorscheme': 'powerline',
+      \ 'component_function': {
+      \   'filename': 'GetFilepath'
+      \ }
   \ }
+
+function! GetFilepath()
+    return expand('%:p:h')
+endfunction
 
 " Unsurprisingly, I want to edit dotfiles and simlinks!
 let g:ctrlp_show_hidden = 1
