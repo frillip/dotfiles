@@ -61,11 +61,16 @@ else
     exit 2
 fi
 
-cd ~
-git clone https://github.com/naggie/dotfiles.git
 
+# all platforms
+
+# clone main repository to home
+cd ~
+test ! -d ~/dotfiles && git clone https://github.com/naggie/dotfiles.git
 cd dotfiles
 
+# Adobe source code pro (powershell patched)
 ./etc/powerline-patched/install.sh
 
+# install dotfile configuration
 ./install.sh
