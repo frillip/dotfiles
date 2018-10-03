@@ -11,7 +11,7 @@ export PATH=~/local/bin:~/bin:/usr/local/bin:/snap/bin:/usr/local/sbin:/usr/loca
 # fix annoying accidental commits and amends
 # and other dangerous commands, yubikey OTP, mouse escape codes
 export HISTIGNORE='git*--amend*:ls:cd:cccccc*:*reboot*:*halt*:0*:task*'
-export HISTCONTROL=ignoredups:ignorespace
+export HISTCONTROL=ignoredups:ignorespace:erasedups
 # vim -X = don't look for X server, which can be slow
 export EDITOR=vim
 export PAGER='less -R'
