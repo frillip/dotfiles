@@ -85,8 +85,8 @@ end
 function fish_user_key_bindings
 	bind \cs _prependsudo
 
-	# Launch CTRLP vim plugin outside of vim, as I often do instinctively
-	bind \cp 'vim -c CtrlP'
+	# Launch FZF vim plugin outside of vim
+	bind \cp 'vim -c FZF'
 end
 
 # get new or steal existing tmux

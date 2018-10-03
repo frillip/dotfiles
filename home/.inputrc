@@ -56,8 +56,8 @@ set echo-control-characters off
 # disturbing the current command line.  bind -x '"\eW":"who"'
 # http://stackoverflow.com/questions/4200800/in-bash-how-do-i-bind-a-function-key-to-a-command
 
-# Launch CTRLP vim plugin outside of vim, as I often do instinctively
-"\C-p":"\C-k \C-u vim -c CtrlP\n"
+	# Launch FZF vim plugin outside of vim
+"\C-p":"\C-k \C-u vim -c FZF\n"
 
 # sudo-ize command
 "\C-s":"\C-asudo \C-e"

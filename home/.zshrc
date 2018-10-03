@@ -218,8 +218,8 @@ fi
 
 # zsh uses zle, not readine so .inputrc is not used. Match bindings here:
 
-# Launch CTRLP vim plugin outside of vim, as I often do instinctively
-bindkey -s '\C-p' "\C-k \C-u vim -c CtrlP\n"
+# Launch FXF vim plugin outside of vim
+bindkey -s '\C-p' "\C-k \C-u vim -c FZF\n"
 
 # sudo-ize command
 bindkey -s '\C-s' "\C-asudo \C-e"
