@@ -256,7 +256,7 @@ let g:lightline = {
   \ }
 
 function! GetFilepath()
-    return expand('%:p:h')
+    return substitute(expand('%:p'), '^'.expand('~'), '~', '')
 endfunction
 
 " Unsurprisingly, I want to edit dotfiles and simlinks!
