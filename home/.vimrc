@@ -315,3 +315,5 @@ let g:fzf_action = {
       \ 'ctrl-t': 'edit',
       \ 'enter': 'tabedit',
       \ }
+
+nnoremap <c-p> :FZF<cr>
