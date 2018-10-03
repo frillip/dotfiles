@@ -139,15 +139,6 @@ ca WQA  wqa
 " if I want to quit all, I'm sure about it
 ca qa qa!
 
-" <tab> to toggle nerdtree, persistent across all tabs with vim-nerdtree-tabs!
-" or, choose standard NERDtree
-nnoremap <tab> :NERDTreeTabsToggle<CR>
-"nnoremap <tab> :NERDTreeToggle<CR>
-let NERDTreeMapQuit='\t'
-" when changing to a tab, file should be focused
-let g:nerdtree_tabs_focus_on_files=1
-let g:NERDTreeWinSize = 40
-
 " gf opens the file under cursor, which is great for navigating a hierarchy of files.
 " Change gF to open file under cursor in new tab, not new pane, like CTRL+W gF
 nnoremap gF <C-w>gf
@@ -208,11 +199,6 @@ set magic
 
 " some plugins/commands/aliases assume bash
 set shell=bash
-
-" Normal-mode backspace to toggle (exuberant) ctags tagbar (this is nice,
-" similar to how tab does NERDtree
-" DISABLED, not useful enough at the moment
-"nnoremap <BS> :TagbarToggle<CR>
 
 " some emacs/readline style normal mode nav that is hardcoded to my brain
 map <C-a> <Home>
