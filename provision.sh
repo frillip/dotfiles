@@ -1,6 +1,8 @@
 #!/bin/bash
 # This script installs dependencies required by dotfiles, and then the configuration files with git repo.
 
+# caveats: nvim isn't practical on all platforms
+
 set -e
 set -x
 # curl -sL https://github.com/naggie/dotfiles/raw/master/provision.sh | bash && bash
