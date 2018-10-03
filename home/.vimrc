@@ -4,7 +4,7 @@ runtime bundle/pathogen/autoload/pathogen.vim
 set nocompatible
 call pathogen#infect()
 
-set rtp+=~/.local/src/fzf
+set rtp+=~/.fzf
 
 " http://tooky.co.uk/2010/04/08/there-was-a-problem-with-the-editor-vi-git-on-mac-os-x.html
 " If this causes vim to exit with non-zero and breaks git on OS X, investigate.
