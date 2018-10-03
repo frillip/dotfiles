@@ -122,8 +122,6 @@ test -x /usr/bin/keychain
 function fish_greeting
 	echo \nWelcome to $HOSTNAME, $USER!
     uptime
-    echo -e "\nFiles in $PWD:\n"
-	ls
 end
 
 

@@ -246,12 +246,7 @@ stty erase ^?
 [ -x /usr/bin/keychain ] && [ -r ~/.ssh/id_rsa ] && eval `keychain --nogui --quiet --eval --inherit any ~/.ssh/id_rsa`
 test -x /usr/bin/dircolors && eval $(dircolors ~/.dir_colors)
 
-# ls is the first thing I normally do when I log in. Let's hope it's not annoying
 uptime
-echo -e "\nFiles in $PWD:\n"
-
-# neat ls with fixed width
-COLUMNS=80 ls
 
 # Disable stupid flow control. Ctrl+S can disable the terminal, requiring
 # Ctrl+Q to restore. It can result in an apparent hung terminal, if
