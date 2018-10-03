@@ -67,7 +67,7 @@ fi
 # FZF
 test ! -d ~/.fzf && git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 git -C ~/.fzf pull origin master
-~/.fzf/install
+~/.fzf/install --all
 
 # clone main repository to home
 cd ~

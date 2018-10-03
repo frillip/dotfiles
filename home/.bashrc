@@ -264,3 +264,5 @@ export GPG_TTY=$(tty)
 # http://superuser.com/questions/267771/bash-completion-makes-bash-start-slowly
 trap '_deferred 2>/dev/null; trap USR1' USR1
 { sleep 0.1 ; builtin kill -USR1 $$ ; } & disown
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
