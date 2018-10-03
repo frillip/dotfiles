@@ -116,7 +116,7 @@ colorscheme gruvbox
 "highlight Normal ctermbg=black guibg=black
 "highlight NonText ctermbg=black guibg=black
 
-highlight LineNr ctermfg=grey ctermbg=235 guibg=244
+highlight LineNr ctermbg=235 guibg=#262626
 
 " anti typo (command aliases)
 " source: .viminfo
