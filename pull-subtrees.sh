@@ -11,7 +11,6 @@ git subtree pull -m 'update subtree' --squash --prefix=home/.zsh/zsh-git-prompt 
 git subtree pull -m 'update subtree' --squash --prefix=home/.zsh/zsh-syntax-highlighting https://github.com/zsh-users/zsh-syntax-highlighting.git master
 git subtree pull -m 'update subtree' --squash --prefix=home/.zsh/zsh-history-substring-search https://github.com/zsh-users/zsh-history-substring-search.git master
 git subtree pull -m 'update subtree' --squash --prefix=home/.vim/bundle/openscad https://github.com/sirtaj/vim-openscad.git master
-git subtree pull -m 'update subtree' --squash --prefix=home/.vim/bundle/ctrlp.vim https://github.com/ctrlpvim/ctrlp.vim.git master
 git subtree pull -m 'update subtree' --squash --prefix=home/.vim/bundle/vim-uci https://github.com/cmcaine/vim-uci.git master
 git subtree pull -m 'update subtree' --squash --prefix=home/.vim/bundle/requirements.txt.vim https://github.com/raimon49/requirements.txt.vim.git master
 git subtree pull -m 'update subtree' --squash --prefix=home/.vim/bundle/vim-polyglot https://github.com/sheerun/vim-polyglot.git master

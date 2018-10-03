@@ -259,10 +259,6 @@ function! GetFilepath()
     return substitute(expand('%:p'), '^'.expand('~'), '~', '')
 endfunction
 
-" Unsurprisingly, I want to edit dotfiles and simlinks!
-let g:ctrlp_show_hidden = 1
-let g:ctrlp_follow_symlinks = 1
-
 " ... but not binary files
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.bin,*.png,*.jpg
 
@@ -275,21 +271,6 @@ ca fail cq
 " stop accidentally saving ';' or ':' files due to typo
 " http://stackoverflow.com/questions/6210946/prevent-saving-files-with-certain-names-in-vim
 autocmd BufWritePre [:;]* throw 'Forbidden file name: ' . expand('<afile>')
-
-" CtrlP open in new tab by default
-" https://github.com/kien/ctrlp.vim/issues/160
-" but only apply when a file is read. This means empty vim won't leave an
-" empty buffer when a file is opened in a new tab
-au BufRead * let g:ctrlp_prompt_mappings = {
-    \ 'AcceptSelection("e")': ['<c-t>'],
-    \ 'AcceptSelection("h")': ['<c-s>'],
-    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
-    \ }
-
-" ignore all files that git does! https://github.com/kien/ctrlp.vim/issues/174
-" https://github.com/kien/ctrlp.vim/issues/58 -- for the method of adding
-" extras for golang: ignore vendored modules which are checked in, and images
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files --exclude-standard -co |& egrep -v "\.(png|jpg|jpeg|gif)$|node_modules|vendor"']
 
 " http://blog.sanctum.geek.nz/vim-annoyances/
 " v-block mode: allow capturing blank space
