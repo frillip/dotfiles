@@ -64,6 +64,10 @@ fi
 
 # all platforms
 
+# FZF
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.local/src/fzf
+~/.local/src/fzf/install
+
 # clone main repository to home
 cd ~
 test ! -d ~/dotfiles && git clone https://github.com/naggie/dotfiles.git
