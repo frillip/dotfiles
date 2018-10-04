@@ -1,14 +1,11 @@
+source ~/.env.sh
+
 # pass * if globbing fails (etc)
 unsetopt NOMATCH
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-export GOPATH=~/gocode
-
-typeset -U path
-path=(~/.local/bin ~/bin /usr/local/bin /snap/bin /usr/local/sbin /usr/local/share/npm/bin $GOPATH/bin /usr/local/go/bin $path)
-#
 # only on new shell, fail silently. Must be non-invasive.
 [ ! $TMUX ] && ~/bin/server-splash 2>/dev/null
 
@@ -84,10 +81,6 @@ autoload -U colors && colors
 ZSH_THEME_GIT_PROMPT_CACHE=1
 source ~/.zsh/zsh-git-prompt/zshrc.sh
 
-# vim -X = don't look for X server, which can be slow
-export EDITOR=vim
-export PAGER='less -R'
-
 # zsh will use vi bindings if you have vim as the editor. I want emacs.
 # zsh does not use gnu readline, but zle
 bindkey -e
@@ -116,17 +109,6 @@ bindkey '^[[B' history-substring-search-down
 # http://stackoverflow.com/questions/24226685/have-zsh-return-case-insensitive-auto-complete-matches-but-prefer-exact-matches
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
-# sometimes TMUX can get confused about whether unicode is supported to draw
-# lines or not. tmux may draw x and q instead, or default to - and | which is
-# ascii. This also allows other programs to use nice UTF-8 symbols, such as
-# NERDtree in vim. So very awesome.
-# Use locale-gen en_GB.UTF-8 to install
-export LANG=en_GB.UTF-8
-
-# mac bc read the conf file to allow floating point maths
-# and load the standard library
-export BC_ENV_ARGS="$HOME/.bcrc -l"
-
 function _tmux_update_env {
     # when an SSH connection is re-established, so is the agent connection.
     # Reload it automatically.
@@ -154,9 +136,6 @@ $ "
 
 # if you call a different shell, this does not happen automatically. WTF?
 export SHELL=$(which zsh)
-
-# available since 4.8.0
-export GCC_COLORS=1
 
 echo "\nWelcome to $HOSTNAME, $USER! "
 

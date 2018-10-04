@@ -1,22 +1,12 @@
+for i in (cat ~/.env.sh | grep ^export)
+    set arr (string split -m1 = $i)
+    set -gx $arr[2] $arr[3]
+end
+
 status --is-interactive; or exit 0
-
-set -x GOPATH ~/gocode
-
-set -x PATH ~/.local/bin ~/bin /usr/local/bin /snap/bin /usr/local/sbin /usr/local/share/npm/bin $GOPATH/bin /usr/local/go/bin $PATH
 
 # only on new shell, fail silently. Must be non-invasive.
 test ! $TMUX; and ~/bin/server-splash ^/dev/null
-
-# sometimes TMUX can get confused about whether unicode is supported to draw
-# lines or not. tmux may draw x and q instead, or default to - and | which is
-# ascii. This also allows other programs to use nice UTF-8 symbols, such as
-# NERDtree in vim. So very awesome.
-# Use locale-gen en_GB.UTF-8 to install
-set -x LANG en_GB.UTF-8
-
-# mac bc read the conf file to allow floating point maths
-# and load the standard library
-set -x BC_ENV_ARGS "$HOME/.bcrc -l"
 
 function tmux_update_env --on-event fish_preexec
     # when an SSH connection is re-established, so is the agent connection.
@@ -53,14 +43,8 @@ test -z $TMUX
 	and tmux attach
 
 
-
-set -x PAGER 'less -R'
-
 # if you call a different shell, this does not happen automatically. WTF?
 set -x SHELL (which fish)
-
-# available since 4.8.0
-set -x GCC_COLORS 1
 
 # alias is just a wrapper for creating a function
 # aliases shared between fish and bash
@@ -70,8 +54,6 @@ set -x GCC_COLORS 1
 if which nvim > /dev/null
     alias vim="nvim -p"
     set -x EDITOR nvim
-else
-    set -x EDITOR vim
 end
 
 # Very long-winded in fish...

@@ -1,9 +1,7 @@
+source ~/.env.sh
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
-
-export GOPATH=~/gocode
-
-export PATH=~/local/bin:~/bin:/usr/local/bin:/snap/bin:/usr/local/sbin:/usr/local/share/npm/bin:$GOPATH/bin:/usr/local/go/bin:$PATH
 
 # only on new shell, fail silently. Must be non-invasive.
 [ ! $TMUX ] && ~/bin/server-splash 2>/dev/null
@@ -12,20 +10,6 @@ export PATH=~/local/bin:~/bin:/usr/local/bin:/snap/bin:/usr/local/sbin:/usr/loca
 # and other dangerous commands, yubikey OTP, mouse escape codes
 export HISTIGNORE='git*--amend*:ls:cd:cccccc*:*reboot*:*halt*:0*:task*'
 export HISTCONTROL=ignoredups:ignorespace:erasedups
-# vim -X = don't look for X server, which can be slow
-export EDITOR=vim
-export PAGER='less -R'
-
-# sometimes TMUX can get confused about whether unicode is supported to draw
-# lines or not. tmux may draw x and q instead, or default to - and | which is
-# ascii. This also allows other programs to use nice UTF-8 symbols, such as
-# NERDtree in vim. So very awesome.
-# Use locale-gen en_GB.UTF-8 to install
-export LANG=en_GB.UTF-8
-
-# mac bc read the conf file to allow floating point maths
-# and load the standard library
-export BC_ENV_ARGS="$HOME/.bcrc -l"
 
 function _tmux_update_env {
     # when an SSH connection is re-established, so is the agent connection.
@@ -38,9 +22,6 @@ export HOSTNAME=$(hostname -s)
 
 # if you call a different shell, this does not happen automatically. WTF?
 export SHELL=$(which bash)
-
-# available since 4.8.0
-export GCC_COLORS=1
 
 # this bashrc takes a sec or so thanks to all the completions, so print this first
 # Now this doesn't matter thanks to the deferred() system
