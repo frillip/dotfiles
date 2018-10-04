@@ -97,8 +97,3 @@ if [ -f ~/.bash_history ] && [ ! -f ~/.history ]; then
     cp ~/.bash_history ~/.history
 fi
 chmod 600 ~/.history
-
-# totally worth it
-if which fish > /dev/null; then
-    fish -c fish_update_completions
-fi

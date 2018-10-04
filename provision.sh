@@ -74,3 +74,8 @@ cd dotfiles
 
 # install dotfile configuration
 ./install.sh
+
+# generate fish completions now that all cmds are installed
+if which fish > /dev/null; then
+    fish -c fish_update_completions
+fi
