@@ -245,3 +245,4 @@ export GPG_TTY=$(tty)
 uptime
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+trap ~/.local/bin/cleanup-history.py EXIT
