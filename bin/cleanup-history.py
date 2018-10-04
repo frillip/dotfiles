@@ -1,5 +1,12 @@
 #!/usr/bin/env python
-"""Edits history to deduplicate, leaving the last occurance or each line"""
+"""
+Edits history to deduplicate, leaving the last occurrence or each line. Also normalises whitespace.
+
+To install, add this to .bashrc:
+
+    trap ~/.local/bin/cleanup-history.py EXIT
+
+"""
 from os import path
 
 history_file = path.expanduser("~/.history")
