@@ -6,5 +6,5 @@ export PAGER='less -R'
 export LANG=en_GB.UTF-8
 export BC_ENV_ARGS="$HOME/.bcrc -l"
 export GCC_COLORS=1
-export FZF_DEFAULT_COMMAND="ripgrep --files --hidden"
-export FZF_CTRL_T_COMMAND="ripgrep --files --hidden"
+export FZF_DEFAULT_COMMAND="rg --files --hidden"
+export FZF_CTRL_T_COMMAND="rg --files --hidden"
