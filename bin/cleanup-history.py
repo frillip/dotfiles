@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 """
-Edits history to deduplicate, leaving the last occurrence or each line. Also normalises whitespace.
+Edits history to deduplicate, leaving the last occurrence of each command. Also normalises whitespace.
 
 To install, add this to .bashrc:
 
-    trap ~/.local/bin/cleanup-history.py ~/.bash_history EXIT
+    trap "~/.local/bin/cleanup-history.py ~/.bash_history" EXIT
 
 """
 from sys import argv
