@@ -306,3 +306,12 @@ nnoremap * *``
 " disallow editing to force me to exit early without modifying and the use
 " sudo without forgetting...
 autocmd BufRead * let &l:modifiable = !&readonly
+
+
+" swap ctrl+t and return, a better default IMO. Also map similar to CtrlP
+let g:fzf_action = {
+      \ 'ctrl-s': 'split',
+      \ 'ctrl-v': 'vsplit',
+      \ 'ctrl-t': 'edit',
+      \ 'enter': 'tabedit',
+      \ }
