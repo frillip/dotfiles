@@ -38,7 +38,8 @@ if [ $(uname) == 'Darwin' ]; then
     # flux is no longer required -- night shift!
 
     # Upgrade or install (logic necessary)
-    packages=(tmux vim git tig httpie ncdu tree bash openssh jq wget task htop gnupg2 bash-completion keychain iproute2mac tmpreaper coreutils sox ffmpeg httrack python ripgrep python go)
+    packages=(tmux vim git tig httpie ncdu tree bash openssh jq wget task htop gnupg2 bash-completion keychain iproute2mac tmpreaper \
+        coreutils sox ffmpeg httrack python ripgrep python go)
     for package in "${packages[@]}"; do
         brew upgrade $package || brew install $package
     done
@@ -62,8 +63,10 @@ elif grep -q Ubuntu /etc/issue || grep -q Raspbian /etc/issue; then
     fi
 
     sudo -E apt-get -y update
-    sudo -E apt-get -y install tmux vim git tig ssh figlet httpie ncdu tree wget htop gnupg2 curl keychain tmpreaper bash-completion jq sox ffmpeg httrack python-pip python3 golang
-    pip install --user ansible ipython
+    sudo -E apt-get -y install tmux vim git tig ssh figlet httpie ncdu tree wget htop gnupg2 curl keychain tmpreaper bash-completion \
+        jq sox ffmpeg httrack python python3 golang libffi-dev python-pip python3-pip python-dev python3-dev libssl-dev
+    python2 -m pip  install --user ansible
+    python3 -m pip  install --user ipython
     sudo -E ln -sf /usr/share/zoneinfo/Europe/London /etc/localtime
 else
     echo "Unsupported OS."
