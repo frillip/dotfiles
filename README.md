@@ -18,13 +18,14 @@ AKA the OSes I actively use.
 
 General:
 
-* `vim` : text editor
+* `vim`/`neovim` : text editor
 * `bash/zsh/fish` : Shells, used interchangibly depending on platform. Fish
 generates completions from man pages! (but CTRL+R reverse-i-search isn't there
 so I don't use it)
 * `tmux` : Terminal multiplexer
 * `git` : version control
-* `ack` : grep alternative for rebasing and source code exploration (I also use ripgrep)
+* `ripgrep` : find/grep alternative for refactoring and source code exploration
+* `fzf` : fuzzy list filtering used with ripgrep and vim
 * `ssh` : secure remote shell (obvious I know)
 * `gnupg2`: OpenPGP cryptographic suite
 * `ipython` : interactive python shell
@@ -42,22 +43,18 @@ so I don't use it)
 * `sox`/`ffmpeg`/`gstreamer` Tools to convert multimedia
 * `httrack` : a website crawler better than wget (i.e. it works)
 * `gruvbox` : A calm colorscheme with good enough contrast. I moved from solarised.
-* `kitty` : GPU accelerated terminal (see also: `alacritty`)
-
-Recommended font: https://github.com/adobe-fonts/source-code-pro
-
-Tip: Minimise keyboard repeat delay and maximise keyboard repeat rate for a
-faster experience. Latency is everything.
-
-NOTE Alacrity/kitty.
-
+* `kitty` : GPU accelerated terminal (see also: `alacritty`) Recommended font: https://github.com/adobe-fonts/source-code-pro Tip: Minimise keyboard repeat delay and maximise keyboard repeat rate for a faster experience. Latency is everything.  NOTE Alacrity/kitty.  
 # shell bindings
 
 * `tm` will start or attach to the first `tmux` session. If you're on the only
   shell, `tmux` session 0 will automatically attach.
-* `CTRL+p` will launch `vim` in find mode, also works inside vim
+* `CTRL+p` will launch `vim` in fzf mode, also works inside vim
+* `CTRL+r` history search using fzf
 * `CTRL+s` will prepend `sudo` to the prompt and move the cursor to the end of the prompt
 * `tryforever <cmd...>` will run a command in a loop until it fails
+* `kill <tab>` will use fzf to find a process to kill
+* `cd **<tab>` will use fzf to find a directory to change to
+* `ssh **<tab>` will use fzf to find a host to ssh to
 * history is globally shared, allowing CTRL+R search
 
 See `home/.aliases` and `bin/` for some useful shortcuts.
