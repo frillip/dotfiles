@@ -38,7 +38,7 @@ if [ $(uname) == 'Darwin' ]; then
     # flux is no longer required -- night shift!
 
     # Upgrade or install (logic necessary)
-    packages=(tmux vim git tig httpie ncdu tree bash openssh jq wget task htop gnupg2 bash-completion keychain iproute2mac tmpreaper coreutils sox ffmpeg httrack python)
+    packages=(tmux vim git tig httpie ncdu tree bash openssh jq wget task htop gnupg2 bash-completion keychain iproute2mac tmpreaper coreutils sox ffmpeg httrack python ripgrep)
     for package in "${packages[@]}"; do
         brew upgrade $package || brew install $package
     done
@@ -52,6 +52,13 @@ elif grep -q Ubuntu /etc/issue || grep -q Raspbian /etc/issue; then
     if grep -q Ubuntu /etc/issue; then
         sudo -E apt-add-repository multiverse
         sudo -E apt-get -y install language-pack-en
+        # FYI -- ripgrep is an official 18.04 package
+        curl -L https://github.com/BurntSushi/ripgrep/releases/download/0.10.0/ripgrep_0.10.0_amd64.deb > /tmp/ripgrep.deb
+        sudo dpkg -i /tmp/ripgrep.deb
+        rm /tmp/ripgrep.deb
+    else
+        curl -L https://github.com/BurntSushi/ripgrep/releases/download/0.10.0/ripgrep-0.10.0-arm-unknown-linux-gnueabihf.tar.gz \
+            | sudo tar -C /usr/local/bin --strip=1 -xzf - ripgrep-0.10.0-arm-unknown-linux-gnueabihf/rg
     fi
 
     sudo -E apt-get -y update
