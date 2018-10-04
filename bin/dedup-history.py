@@ -12,6 +12,7 @@ lines.reverse()
 new_lines = list()
 
 for line in lines:
+    line = ' '.join(line.split())  # remove multiple whitespace
     if line not in seen:
         new_lines.append(line)
         seen.add(line)
