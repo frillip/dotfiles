@@ -15,10 +15,10 @@ with open(history_file) as f:
     lines = [line.strip() for line in f]
 
 seen = set()
-lines.reverse()
 new_lines = list()
 
-for line in lines:
+# note that reversed() does not copy lines, just results in reversed iteration
+for line in reversed(lines):
     line = ' '.join(line.split())  # remove multiple whitespace
     if line not in seen:
         new_lines.append(line)
