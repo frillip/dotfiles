@@ -202,6 +202,7 @@ function _deferred {
 
 	# hardcoded ssh completions (known_hosts is encrypted mostly)
 	#complete -o default -W 'example.com example.net' ssh scp ping
+    [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 }
 
 # patches for Mac OS X
@@ -245,4 +246,3 @@ export GPG_TTY=$(tty)
 trap '_deferred 2>/dev/null; trap USR1' USR1
 { sleep 0.1 ; builtin kill -USR1 $$ ; } & disown
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
