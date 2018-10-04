@@ -43,12 +43,10 @@ alias day='task end.after:today completed'
 alias t="tail -n100 -f"
 
 alias findack='echo use f which is an alias for fzf, or ctrl-p which opens in fzf in vim' # deprecated!
+alias ack='echo use ripgrep (rg)' # deprecated!
 alias f="fzf"
 alias sed-recursive="ack -f | xargs sed -i '' -E -e"
-alias TODO='ack TODO'
-# use gitignore with ack
-alias gack="git ls-files -oc --exclude-standard | ack -x"
-alias acknonascii="ack '[^\x00-\x7F]'"
+alias TODO='rg TODO'
 
 # replace a symlink with the file it points to
 alias rewrite="sed -i ''"
