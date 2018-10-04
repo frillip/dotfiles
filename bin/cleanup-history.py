@@ -4,12 +4,12 @@ Edits history to deduplicate, leaving the last occurrence or each line. Also nor
 
 To install, add this to .bashrc:
 
-    trap ~/.local/bin/cleanup-history.py EXIT
+    trap ~/.local/bin/cleanup-history.py ~/.bash_history EXIT
 
 """
-from os import path
+from sys import argv
 
-history_file = path.expanduser("~/.history")
+history_file = argv[1]
 
 with open(history_file) as f:
     lines = [line.strip() for line in f]
