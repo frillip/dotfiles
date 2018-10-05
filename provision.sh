@@ -88,11 +88,12 @@ git -C ~/.fzf pull origin master
 cd ~
 test ! -d ~/dotfiles && git clone https://github.com/naggie/dotfiles.git
 cd dotfiles
+git pull --ff-only origin master
 
 # Adobe source code pro (powershell patched)
 ./etc/powerline-patched/install.sh
 
-# install dotfile configuration
+# install dotfiles configuration
 ./install.sh
 
 # generate fish completions now that all cmds are installed
