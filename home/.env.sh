@@ -8,3 +8,4 @@ export BC_ENV_ARGS="$HOME/.bcrc -l"
 export GCC_COLORS=1
 export FZF_DEFAULT_COMMAND="rg --files --hidden"
 export FZF_CTRL_T_COMMAND="rg --files --hidden"
+export RIPGREP_CONFIG_PATH=~/.ripgreprc
