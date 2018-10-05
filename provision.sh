@@ -33,7 +33,7 @@ if [ $(uname) == 'Darwin' ]; then
 
     # recommended, uses /Applications now.
     brew tap caskroom/homebrew-cask
-    brew cask install google-chrome spectacle
+    brew cask install spectacle firefox
 
     # flux is no longer required -- night shift!
 
@@ -66,8 +66,10 @@ elif grep -q Ubuntu /etc/issue || grep -q Raspbian /etc/issue; then
     sudo -E apt-get -y update
     sudo -E apt-get -y install tmux vim git tig ssh figlet httpie ncdu tree wget htop gnupg2 curl keychain tmpreaper bash-completion \
         jq sox ffmpeg httrack python python3 golang libffi-dev python-pip python3-pip python-dev python3-dev libssl-dev
+
     sudo python3 -m pip install --upgrade pip
     sudo python3 -m pip install --upgrade ansible ipython
+
     sudo -E ln -sf /usr/share/zoneinfo/Europe/London /etc/localtime
 else
     echo "Unsupported OS."

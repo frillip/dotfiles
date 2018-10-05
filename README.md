@@ -4,7 +4,7 @@ AKA the OSes I actively use.
 
 * Ubuntu 16.04 LTS
 * Ubuntu 18.04 LTS
-* MacOS (~10.13 High Sierra)
+* MacOS (~10.13 High Sierra) (GUI applications too)
 * Raspbian Stretch
 * ~~Raspbian Jessie~~
 * ~~RHEL5~~
