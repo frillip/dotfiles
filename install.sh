@@ -5,11 +5,6 @@ cd $(dirname $0)
 
 PLATFORM=$(uname)
 
-function warning {
-	# TODO: check PS1, no escape code if not interactive....?
-	echo -e "\033[00;31m> $*\033[00m"
-}
-
 test -d ~/.vim/ && rm -rf ~/.vim/
 test -d ~/.zsh/ && rm -rf ~/.zsh/
 # not for fish as it removes generated completions which have to rebuilt which is a pain
@@ -74,8 +69,6 @@ if [ -n "$TMUX" ]; then
 	tmux source-file ~/.tmux.conf >/dev/null
     export SYSTEM_COLOUR=$(~/bin/system-colour.py $HOSTNAME)
     tmux set -g status-left-bg colour${SYSTEM_COLOUR} &>/dev/null
-else
-	warning "Not inside tmux, so can't tell tmux to reload"
 fi
 
 if [ $PLATFORM == 'Darwin' ]; then
