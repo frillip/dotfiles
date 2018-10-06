@@ -59,7 +59,8 @@ if [ $PLATFORM == 'Darwin' ]; then
     hidutil property --set '{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000039,"HIDKeyboardModifierMappingDst":0x700000029}]}' > /dev/null
 
     # refresh stuff (killing will presumably make the watchdog restart the application)
-    killall Dock
+    # disabled Dock killing as it makes it jump in front on fullscreen which is irritating
+    #killall Dock
     killall Finder
     killall SystemUIServer
 fi
