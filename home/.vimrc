@@ -42,8 +42,6 @@ set ttimeoutlen=50
 " Filetype mappings
 au BufNewFile,BufRead *.conf.j2            set filetype=dosini
 au BufNewFile,BufRead *.conf               set filetype=dosini
-au BufNewFile,BufRead *.json               set filetype=javascript
-au BufNewFile,BufRead *.less               set filetype=css
 au BufNewFile,BufRead *.cls                set filetype=tex
 au BufNewFile,BufRead *.ino                set filetype=c
 au BufNewFile,BufRead *.pde                set filetype=c
