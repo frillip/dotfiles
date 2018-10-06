@@ -1,6 +1,14 @@
 for i in (grep '^export' ~/.env.sh | cut -c 8-)
     set arr (string split -m1 = $i)
-    set -gx $arr[1] $arr[2]
+    set key $arr[1]
+    set value $arr[2]
+
+    ## convert path to array, emulating interpolation of $PATH
+    if test $key = PATH
+        set value (echo $value | tr : '\n' | grep -v PATH) $PATH
+    end
+
+    set -gx $key $value
 end
 
 status --is-interactive; or exit 0
