@@ -1,6 +1,6 @@
-for i in (cat ~/.env.sh | grep ^export)
+for i in (grep '^export' ~/.env.sh | cut -c 8-)
     set arr (string split -m1 = $i)
-    set -gx $arr[2] $arr[3]
+    set -gx $arr[1] $arr[2]
 end
 
 status --is-interactive; or exit 0
