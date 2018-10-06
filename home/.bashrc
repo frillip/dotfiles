@@ -202,7 +202,6 @@ function _deferred {
 
 	# hardcoded ssh completions (known_hosts is encrypted mostly)
 	#complete -o default -W 'example.com example.net' ssh scp ping
-    [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 }
 
 # patches for Mac OS X
@@ -240,6 +239,8 @@ stty start undef
 # fix gpg-agent ncurses passphrase prompt
 # https://www.gnupg.org/documentation/manuals/gnupg/Common-Problems.html
 export GPG_TTY=$(tty)
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # run the deferred function in the background in this context after bashrc
 # http://superuser.com/questions/267771/bash-completion-makes-bash-start-slowly
