@@ -74,7 +74,7 @@ function fish_user_key_bindings
 	bind \cs _prependsudo
 
 	# Launch FZF vim plugin outside of vim
-	bind \cp ' fzf | xargs $EDITOR'
+	bind \cp " fzf | xargs sh -c '\"\$@\" </dev/tty' _ $EDITOR"
 end
 
 # get new or steal existing tmux

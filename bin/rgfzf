@@ -7,4 +7,5 @@ if [ $# -eq 0 ]; then
     exit 1
 fi
 
-rg --color=always "$@" | fzf --ansi | cut -d ':' -f 1 | xargs $EDITOR
+# tty required, see GNU xargs man page
+rg --color=always "$@" | fzf --ansi | cut -d ':' -f 1 | xargs sh -c '"$@" </dev/tty' _ $EDITOR
