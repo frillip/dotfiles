@@ -61,8 +61,8 @@ if [ $PLATFORM == 'Darwin' ]; then
     # refresh stuff (killing will presumably make the watchdog restart the application)
     # disabled Dock killing as it makes it jump in front on fullscreen which is irritating
     #killall Dock
-    killall Finder
-    killall SystemUIServer
+    #killall Finder
+    #killall SystemUIServer
 fi
 
 # reload TMUX config if running inside tmux
