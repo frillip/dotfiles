@@ -196,7 +196,7 @@ fi
 # zsh uses zle, not readine so .inputrc is not used. Match bindings here:
 
 # Launch FZF vim plugin outside of vim (with a tty)
-bindkey -s '\C-p' "\C-k \C-u fzf | xargs sh -c '\"\$@\" </dev/tty' _ $EDITOR\n"
+bindkey -s '\C-p' "\C-k \C-u fzf | xargs sh -c '\$0\"\$@\" </dev/tty' $EDITOR\n"
 
 # sudo-ize command
 bindkey -s '\C-s' "\C-asudo \C-e"
