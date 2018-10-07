@@ -1,31 +1,30 @@
-# lazy chdir
+# LAZY CHDIR
 alias ..='cd ..'
 alias ...='cd ../..'
 
-# package manager commands
-alias sagi='sudo apt-get install'
-alias bi='brew install'
-alias bci='brew cask install'
-
-# colours and ANSI lines
+# DEFAULT ARGS
 alias tree="tree -CA"
 alias ip="ip -c"
-
 # Open specified files in tabs by default. -O and -o will override.
 alias vim='vim -p'
-
 # human readable timestamps
 alias dmesg='dmesg -T'
-
 # Moar ANSI colours, raw mode
 alias less='less -R'
-
 # list by creation date (I think)
 alias lr='ls -latr'
 # list all
 alias la='ls -al'
+# note this does not work on mac os x, has to be patched in bash or fish rc
+alias ls='ls --color=auto'
+# don't use URL to create filename (do I really want a file called
+# unetbootin-source-494.tar.gz?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Funetbootin%2Ffiles%2FUNetbootin%2F494%2F&ts=1391695063&use_mirror=heanet?)
+alias wget='wget --content-disposition'
 
-# Common shortcuts
+# COMMON SHORTCUTS
+alias sagi='sudo apt-get install'
+alias bi='brew install'
+alias bci='brew cask install'
 alias b='git branch -a'
 alias l=ls
 alias o='git log'
@@ -33,36 +32,24 @@ alias g=git
 alias s='git status'
 alias d='git diff'
 alias dt='git difftool -y'
-
 # task default command is "next", hence "n"
 alias n='task'
 alias in='task add +in'
 alias week='task end.after:today-1wk completed'
 alias day='task end.after:today completed'
-
 alias t="tail -n100 -f"
-
-alias findack='echo use f which is an alias for fzf, or ctrl-p which opens in fzf in vim' # deprecated!
-alias ack='echo use ripgrep (rg)' # deprecated!
 alias f="fzf"
-alias sed-recursive="ack -f | xargs sed -i '' -E -e"
-alias TODO='rg TODO'
 
+# NEW COMMANDS
+alias sed-recursive="rg --files --hidden --ignore-file=~/.rgignore | xargs sed -i '' -E -e"
+alias TODO='rg TODO'
 # replace a symlink with the file it points to
 alias rewrite="sed -i ''"
-
 alias webserver='python -m SimpleHTTPServer'
 alias grep='grep --color=auto'
-
 alias openssl-get-expiry='openssl x509 -enddate -noout -in'
 
-# note this does not work on mac os x, has to be patched in bash or fish rc
-alias ls='ls --color=auto'
-
-# don't use URL to create filename (do I really want a file called
-# unetbootin-source-494.tar.gz?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Funetbootin%2Ffiles%2FUNetbootin%2F494%2F&ts=1391695063&use_mirror=heanet?)
-alias wget='wget --content-disposition'
-
+# MISC FIXES
 # make bash/zsh (but not fish yet, TODO) aliases work with sudo
 # http://superuser.com/questions/441556/bash-alias-doesnt-carry-over-with-sudo
 alias sudo="sudo "
@@ -71,39 +58,7 @@ alias sudo="sudo "
 # namespace???) so force-choose gpg2, which is faster due to AVX etc.
 alias gpg=gpg2
 
-# A few more useful commands that don't need aliases. This file is a good
-# place.
-#du -sh      # find recursive, human size of given files/directories
-#file        # identify a filetype using fingerprinting
-#ack         # a good , faster, alternative to find | xargs grep -l
-#stress      # load CPU/mem/disk
-#binwalk     # discover things on a firmware image
-#strings     # discover strings in a binary blob
-#fdupes -r . # look for duplicate files
-#ipython     # interactive python shell
-#jq          # shell json parser. Also display with jq .
-#ncdu        # ncurses disk usage analyser
-#tig         # browse git repositories, ncurses
-#ngdb        # ncurses gdb
-#mtr         # tracert + ping
-#gpg         # GNU privacy guard. Symmetric encryption/compression as well as pub-key.
-#gpg-zip     # Make an archive with above. https://www.gnupg.org/documentation/manuals/gnupg/gpg_002dzip.html
-#lsblk       # list block devices
-#pm2         # process manager with json definitions
-#vbindiff    # binary diff
-#lsof        # list open files/ports (-i :8080) by process (handles)
-#7zr         # make 7z archives. Requires p7zip-full
-#weechat     # IRC OOB
-#profanity   # XMPP client (kaiwa server or letschat)
-#http        # AKA httpie from https://github.com/jakubroztocil/httpie is better than curl
-
-
-# Also, this seems like a good place to note:
-# If you're in a dangling SSH session type
-#    ~.
-# To 'disconnect'
-
-# typo fixes
+# TYPO FIXES
 alias sl=ls
 alias c=cd
 alias xs=cd
@@ -115,5 +70,8 @@ alias cd..='cd ..'
 alias lsd=ls
 alias grepo=grep
 alias rfind=find
-alias lack=ack
 alias car=cat
+
+# DEPRECATIONS
+alias findack='echo use f which is an alias for fzf, or ctrl-p which opens in fzf in vim' # deprecated!
+alias ack='echo use ripgrep (rg)' # deprecated!
