@@ -1,2 +1,2 @@
+# note that ~ does not expand in .ripgreprc
 --smart-case
---ignore-file=~/.rgignore

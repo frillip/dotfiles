@@ -4,8 +4,9 @@ export PATH=~/local/bin:~/bin:/usr/local/bin:/snap/bin:/usr/local/sbin:/usr/loca
 export EDITOR=vim
 export PAGER='less -R'
 export LANG=en_GB.UTF-8
-export BC_ENV_ARGS="$HOME/.bcrc -l"
+export BC_ENV_ARGS="~/.bcrc -l"
 export GCC_COLORS=1
-export FZF_DEFAULT_COMMAND="rg --files --hidden"
-export FZF_CTRL_T_COMMAND="rg --files --hidden"
+# note that ~ does not expand in .ripgreprc
+export FZF_DEFAULT_COMMAND="rg --files --hidden --ignore-file=~/.rgignore"
+export FZF_CTRL_T_COMMAND="rg --files --hidden --ignore-file=~/.rgignore"
 export RIPGREP_CONFIG_PATH=~/.ripgreprc
