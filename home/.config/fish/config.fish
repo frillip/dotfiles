@@ -1,4 +1,4 @@
-for i in (grep '^export' ~/.env.sh | cut -c 8-)
+for i in (grep '^export' ~/.env.sh | sed 's/"//g' | sed "s/'//g" | cut -c 8-)
     set arr (string split -m1 = $i)
     set key $arr[1]
     set value $arr[2]
