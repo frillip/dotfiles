@@ -57,7 +57,7 @@ set echo-control-characters off
 # http://stackoverflow.com/questions/4200800/in-bash-how-do-i-bind-a-function-key-to-a-command
 
 	# Launch FZF vim plugin outside of vim
-"\C-p":"\C-k \C-u vim -c FZF\n"
+"\C-p":"\C-k \C-u fzf | xargs $EDITOR\n"
 
 # sudo-ize command
 "\C-s":"\C-asudo \C-e"
