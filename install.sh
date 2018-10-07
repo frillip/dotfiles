@@ -5,6 +5,10 @@ cd $(dirname $0)
 
 PLATFORM=$(uname)
 
+if which task &>/dev/null; then
+    TASK_CONTEXT=$(task _get rc.context)
+fi
+
 test -d ~/.vim/ && rm -rf ~/.vim/
 test -d ~/.zsh/ && rm -rf ~/.zsh/
 # not for fish as it removes generated completions which have to rebuilt which is a pain
@@ -91,3 +95,6 @@ if [ -f ~/.bash_history ] && [ ! -f ~/.history ]; then
     cp ~/.bash_history ~/.history
 fi
 chmod 600 ~/.history
+
+# restore task context (maybe)
+test $TASK_CONTEXT && task context $TASK_CONTEXT &>/dev/null
