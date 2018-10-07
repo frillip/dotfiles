@@ -9,8 +9,8 @@ unsetopt NOMATCH
 # only on new shell, fail silently. Must be non-invasive.
 [ ! $TMUX ] && ~/bin/server-splash 2>/dev/null
 
-HISTSIZE=9000
-SAVEHIST=9000
+HISTSIZE=1000
+SAVEHIST=1000
 # Change default as unconfigured bash could clobber history. Bash can run
 # unconfigured if CTRL+C is hit during initialisation.
 HISTFILE=~/.history

@@ -59,7 +59,7 @@ set +o histexpand
 # commands get lost any other way.
 # Explaination: http://unix.stackexchange.com/questions/1288/preserve-bash-history-in-multiple-terminal-windows
 
-HISTSIZE=9000
+HISTSIZE=1000
 HISTFILESIZE=$HISTSIZE
 
 # Change default as unconfigured bash could clobber history. Bash can run
