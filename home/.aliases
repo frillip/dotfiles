@@ -45,7 +45,7 @@ alias webserver='python -m SimpleHTTPServer'
 alias grep='grep --color=auto'
 alias openssl-get-expiry='openssl x509 -enddate -noout -in'
 alias sed-recursive="rg --files --hidden --ignore-file=~/.rgignore | xargs sed -i '' -E -e"
-alias f="rgfzf | xargs $EDITOR"
+alias r="rgfzf"
 
 # MISC FIXES
 # make bash/zsh (but not fish yet, TODO) aliases work with sudo
