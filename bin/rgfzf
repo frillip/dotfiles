@@ -1,7 +1,9 @@
 #!/bin/sh
 
 if [ $# -eq 0 ]; then
-    rg 2>&1 | sed "s+rg +rgfzf+g"
+    echo "Open files that contain given matches in \$EDITOR, selected by fzf"
+    echo
+    rg 2>&1 | sed "s+rg +rgfzf +g"
     exit 1
 fi
 
