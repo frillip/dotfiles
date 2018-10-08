@@ -1,5 +1,6 @@
 # Old BSPWM configuration, unused
 # Warning, stuff here can break XQuartz
+#xmodmap .Xmodmap
 #sxhkd &
 #xrdb -merge ~/.Xresources
 #setxkbmap gb

@@ -1,10 +1,10 @@
+! not used by default unless startx/.xinitrc is used
 ! http://www.pixelbeat.org/settings/.Xmodmap
 ! Disable silly caps lock key
 ! Fedora 8 at least, explicitly prompts you whether you want to load ~/.Xmodmap
 clear Lock
 
 ! ... and replace it with ESC
-keycode 9 = Caps_Lock NoSymbol Caps_Lock
 keycode 66 = Escape NoSymbol Escape
 
 ! keyboard layout, can also set with stxkbmap gb, or modifying /etc/defaults/keyboard
