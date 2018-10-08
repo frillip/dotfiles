@@ -314,3 +314,7 @@ let g:fzf_action = {
       \ }
 
 nnoremap <c-p> :FZF<cr>
+
+" stop "press ENTER or type command to continue" (irritating and slow) prompt
+" when opening more than one file
+let g:bufferline_echo=0
