@@ -5,8 +5,8 @@
 # Required as $EDITOR does not support args, and logic for nvim was replicated across bash, fish, zsh.
 
 if which nvim > /dev/null; then
-    nvim -p "$@"
+    exec nvim -p "$@"
 else
-    vim -p "$@"
+    exec vim -p "$@"
 fi
 
