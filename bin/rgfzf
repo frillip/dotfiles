@@ -1,10 +1,14 @@
-#!/bin/sh
-
+#!/bin/bash
 if [ $# -eq 0 ]; then
     echo "Open files that contain given matches in \$EDITOR, selected by fzf"
     echo
     rg 2>&1 | sed "s+rg +rgfzf +g"
     exit 1
+fi
+
+if [[ $EDITOR == *vim* ]]; then
+    # note that $EDITOR can't contain -p already, as some things don't support $EDITOR with built in arguments. For example, git.
+    EDITOR="$EDITOR -p"
 fi
 
 # tty required, see GNU xargs man page
