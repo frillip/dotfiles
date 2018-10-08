@@ -8,4 +8,4 @@ if [ $# -eq 0 ]; then
 fi
 
 # tty required, see GNU xargs man page
-rg --color=always "$@" | fzf --ansi | cut -d ':' -f 1 | xargs sh -c '$0 "$@" </dev/tty' $EDITOR
+rg --color=always "$@" | fzf --multi --ansi | cut -d ':' -f 1 | xargs sh -c '$0 "$@" </dev/tty' $EDITOR
