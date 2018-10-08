@@ -6,8 +6,6 @@ call pathogen#infect()
 
 set rtp+=~/.fzf
 
-" http://tooky.co.uk/2010/04/08/there-was-a-problem-with-the-editor-vi-git-on-mac-os-x.html
-" If this causes vim to exit with non-zero and breaks git on OS X, investigate.
 syntax on
 filetype plugin indent on
 
@@ -23,19 +21,15 @@ set incsearch
 " no wrapping by default. Use `:set wrap` to re-enable
 set nowrap
 
-" match by highlight as well (still need to press return to search, however)
 set hlsearch
 " Clear search highlight by hitting enter
 nnoremap <silent> <CR> :noh<CR>
 
-" Spell checking. Does not offer suggestions :-)
+" Spell checking. Does not offer suggestions, which makes you learn.
 set spell
 
-" Highlight current line
 set cursorline
-" ...and column. Good for lining up and feeling like a pro hacker.
 set cursorcolumn
-
 " Stop the pause that you no longer notice exiting insert mode
 set ttimeoutlen=50
 
@@ -63,21 +57,17 @@ set nobackup
 " when inside parenthesis. It makes the cursor hard to distinguish.
 set noshowmatch
 
-
 " NoMatchParen " this works as a command but not a setting
 " this does work, fooling the matching system into
 let loaded_matchparen = 1
-
 
 " Reselect visual block after indent/outdent
 vnoremap < <gv
 vnoremap > >gv
 
-" no point in pressing/releasing the shift key!
+" no point in pressing/releasing the shift key -- slightly faster
 nnoremap ; :
 
-" if you want to force yourself to use hjkl, uncomment this:
-" Get off my lawn
 " Stops regression to arrow keys, encourages learning of advanced motion keys
 nnoremap <Left> :echo "Use [h] for left"<CR>
 nnoremap <Right> :echo "Use [l] for right"<CR>
@@ -115,6 +105,7 @@ colorscheme gruvbox
 "highlight Normal ctermbg=black guibg=black
 "highlight NonText ctermbg=black guibg=black
 
+" make line number distinct from text
 highlight LineNr ctermbg=235 guibg=#262626
 
 " anti typo (command aliases)
@@ -145,17 +136,8 @@ nnoremap gF <C-w>gf
 " Ex mode? WTF VIM?
 map Q <Nop>
 
-" macros are extremely useful in rare cases, best not to disable
-"map q <Nop>
-
 " re-flow entire paragraph
 nmap Q gqap
-
-" http://nvie.com/posts/how-i-boosted-my-vim/
-" Finally, a trick by Steve Losh "for when you forgot to sudo before editing a
-" file that requires root privileges (typically /etc/hosts). This lets you use
-" w!! to do that after you opened the "file already:
-cmap w!! w !sudo tee % >/dev/null
 
 " Enable mouse mode. Use xterm >= 277 for mouse mode for large terms.
 set mouse=a
@@ -180,10 +162,10 @@ set tabpagemax=50
 " open help in new tab
 cabbrev help tab help
 
-" abbreviate messages in every way to avoid hit-enter prompt
+" abbreviate messages in every way to (try to) avoid hit-enter prompt
 set shortmess=a
 
-" keep window split size emal on resize AWESOME
+" keep window split size equal on resize
 " http://stackoverflow.com/questions/14649698/how-to-resize-split-windows-in-vim-proportionally
 autocmd VimResized * :wincmd =
 
@@ -191,12 +173,12 @@ autocmd VimResized * :wincmd =
 " consistent with :%s//g commands.
 " This stops having to escape all regex metachars
 set magic
-" This is too annoying, as it's triggered wherever you have /. Do \v manually.
+" This is too annoying, as it's triggered wherever you have /. Remember to do \v manually instead.
 " No better solution online atm.
 "nnoremap / /\v
 "cnoremap s/ s/\v
 
-" some plugins/commands/aliases assume bash
+" some plugins/commands/aliases assume bash and break when using fish.
 set shell=bash
 
 " some emacs/readline style normal mode nav that is hardcoded to my brain
@@ -209,6 +191,7 @@ noremap! <C-e> <End>
 " 4 spaces for tabs, inserted automatically.
 " Tabs work fine in an ideal world. Sadly, spaces are always more consistent.
 " To refactor code: find ./ -type f -exec sed -i 's/\t/    /g' {} \;
+" Tip: use = in visual-line mode to re-indent
 
 " Pressing tab means spaces instead
 set expandtab
@@ -221,9 +204,6 @@ set shiftwidth=4
 
 " Tabs (actual tabs) to be 4-wide. Sorry, Linus.
 set tabstop=4
-
-" Tip: use = in visual-line mode to re-indent
-
 
 " YAML should have a 2-space indent, as dictionary fields have to line up
 " after a list delimitation.
@@ -273,7 +253,6 @@ autocmd BufWritePre [:;]* throw 'Forbidden file name: ' . expand('<afile>')
 " v-block mode: allow capturing blank space
 set virtualedit=block
 
-
 " vsplit/split: swap order so the text does not move
 set splitbelow
 set splitright
@@ -303,7 +282,6 @@ nnoremap * *``
 " disallow editing to force me to exit early without modifying and the use
 " sudo without forgetting...
 autocmd BufRead * let &l:modifiable = !&readonly
-
 
 " swap ctrl+t and return, a better default IMO. Also map similar to CtrlP
 let g:fzf_action = {
