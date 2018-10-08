@@ -72,4 +72,4 @@ alias car=cat
 
 # DEPRECATIONS
 alias findack='echo use f which is an alias for fzf, or ctrl-p which opens in fzf in vim' # deprecated!
-alias ack='echo use ripgrep (rg)' # deprecated!
+alias ack='echo use ripgrep \(rg\)' # deprecated!
