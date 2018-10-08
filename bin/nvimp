@@ -1,0 +1,12 @@
+#!/bin/bash
+# Opens nvim if available, else vim.
+# Adds -p flag to open files in tabs.
+# Set $EDITOR to nvimp
+# Required as $EDITOR does not support args, and logic for nvim was replicated across bash, fish, zsh.
+
+if which nvim > /dev/null; then
+    nvim -p "$@"
+else
+    vim -p "$@"
+fi
+

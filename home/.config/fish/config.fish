@@ -56,12 +56,6 @@ set -x SHELL (which fish)
 # aliases shared between fish and bash
 . ~/.aliases
 
-# nvim? override
-if which nvim > /dev/null
-    alias vim="nvim -p"
-    set -x EDITOR nvim
-end
-
 # Very long-winded in fish...
 function _prependsudo
 	commandline -C 0
@@ -74,7 +68,7 @@ function fish_user_key_bindings
 	bind \cs _prependsudo
 
 	# Launch FZF vim plugin outside of vim
-	bind \cp " fzf | xargs sh -c '\$0 \"\$@\" </dev/tty' $EDITOR"
+	bind \cp " fzf --multi | xargs sh -c '\$0 \"\$@\" </dev/tty' $EDITOR"
 end
 
 # get new or steal existing tmux

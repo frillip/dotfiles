@@ -164,12 +164,6 @@ PS1="\$(__exit_warn)\n\[\e[38;5;${PROMPT_COLOUR}m\]\u@\H:\$PWD\[\e[90m\]\$(__git
 # aliases shared between fish and bash
 source ~/.aliases
 
-# nvim? override
-if which nvim > /dev/null; then
-    alias vim="nvim -p"
-    export EDITOR=nvim
-fi
-
 # get new or steal existing tmux
 function tm {
 	# must not already be inside tmux

@@ -6,10 +6,5 @@ if [ $# -eq 0 ]; then
     exit 1
 fi
 
-if [[ $EDITOR == *vim* ]]; then
-    # note that $EDITOR can't contain -p already, as some things don't support $EDITOR with built in arguments. For example, git.
-    EDITOR="$EDITOR -p"
-fi
-
 # tty required, see GNU xargs man page
 rg --color=always "$@" | fzf --multi --ansi | cut -d ':' -f 1 | xargs sh -c '$0 "$@" </dev/tty' $EDITOR
