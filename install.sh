@@ -5,9 +5,9 @@ cd $(dirname $0)
 
 PLATFORM=$(uname)
 
-if which task &>/dev/null; then
-    TASK_CONTEXT=$(task _get rc.context)
-fi
+# task context state is stored in config file, which is about to get clobbered
+# so remember it to restore later.
+which task &>/dev/null && TASK_CONTEXT=$(task _get rc.context)
 
 test -d ~/.vim/ && rm -rf ~/.vim/
 test -d ~/.zsh/ && rm -rf ~/.zsh/
