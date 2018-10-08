@@ -98,3 +98,7 @@ chmod 600 ~/.history
 
 # restore task context (maybe)
 test $TASK_CONTEXT && task context $TASK_CONTEXT &>/dev/null
+
+# set caps lock to act as esc if possible
+test $DISPLAY && which dconf &> /dev/null && \
+    dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:escape']"

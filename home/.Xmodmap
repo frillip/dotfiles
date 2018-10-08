@@ -1,4 +1,5 @@
-! not used by default unless startx/.xinitrc is used
+! not used by default unless startx/.xinitrc is used or the display manager loads it. Ubuntu's no longer does.
+! load with xmodmap ~/.Xmodmap
 ! http://www.pixelbeat.org/settings/.Xmodmap
 ! Disable silly caps lock key
 ! Fedora 8 at least, explicitly prompts you whether you want to load ~/.Xmodmap
