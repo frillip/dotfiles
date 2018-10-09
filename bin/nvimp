@@ -5,8 +5,10 @@
 # Required as $EDITOR does not support args, and logic for nvim was replicated across bash, fish, zsh.
 
 # useful if FZF (rgfzf etc) returns no results
+# I know this is probably controversial as nvimp is set to wrap vim/nvim via
+# alias. However it fits my workflow of always starting vim with files as args.
 if [[ $# -eq 0 ]] ; then
-    echo "No files to open"
+    echo "No files to edit"
     exit 1
 fi
 

@@ -5,8 +5,6 @@ alias ...='cd ../..'
 # DEFAULT ARGS
 alias tree="tree -CA"
 alias ip="ip -c"
-# Open specified files in tabs by default. -O and -o will override.
-alias vim='vim -p'
 # human readable timestamps
 alias dmesg='dmesg -T'
 # Moar ANSI colours, raw mode
@@ -60,8 +58,9 @@ alias gpg=gpg2
 alias sl=ls
 alias c=cd
 alias xs=cd
-alias cim=vim
-alias bim=vim
+alias cim=nvimp
+alias bim=nvimp
+alias vim=nvimp
 alias nom=npm
 alias gi=git
 alias cd..='cd ..'
