@@ -162,8 +162,8 @@ set tabpagemax=50
 " open help in new tab
 cabbrev help tab help
 
-" abbreviate messages in every way to (try to) avoid hit-enter prompt
-set shortmess=a
+" 'message for reading a file overwrites any previous message'
+set shortmess=O
 
 " keep window split size equal on resize
 " http://stackoverflow.com/questions/14649698/how-to-resize-split-windows-in-vim-proportionally
@@ -292,7 +292,3 @@ let g:fzf_action = {
       \ }
 
 nnoremap <c-p> :FZF<cr>
-
-" stop "press ENTER or type command to continue" (irritating and slow) prompt
-" when opening more than one file
-let g:bufferline_echo=0
