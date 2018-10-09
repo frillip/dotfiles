@@ -4,6 +4,12 @@
 # Set $EDITOR to nvimp
 # Required as $EDITOR does not support args, and logic for nvim was replicated across bash, fish, zsh.
 
+# useful if FZF (rgfzf etc) returns no results
+if [[ $# -eq 0 ]] ; then
+    echo "No files to open"
+    exit 1
+fi
+
 if which nvim > /dev/null; then
     exec nvim -p "$@"
 else
