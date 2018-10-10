@@ -1,17 +1,4 @@
-# Supported OSes
-
-AKA the OSes I actively use.
-
-* Ubuntu 16.04 LTS
-* Ubuntu 18.04 LTS
-* MacOS (~10.13 High Sierra) (GUI applications too)
-* Raspbian Stretch
-* ~~Raspbian Jessie~~
-* ~~RHEL5~~
-* ~~RHEL6~~
-* ~~Ubuntu 11.10~~
-* ~~Ubuntu 12.04 LTS~~
-* ~~Ubuntu 14.04 LTS~~
+# Features
 
 
 # Software
@@ -71,6 +58,22 @@ to differentiate between hosts.
 [4]: http://superuser.com/questions/413351/weird-insertion-from-vim-on-mouse-click
 [5]: https://github.com/unphased/putty-X
 
+# Supported OSes
+
+AKA the OSes I actively use.
+
+* Ubuntu 16.04 LTS
+* Ubuntu 18.04 LTS
+* MacOS (~10.13 High Sierra) (GUI applications too)
+* Raspbian Stretch
+* ~~Raspbian Jessie~~
+* ~~RHEL5~~
+* ~~RHEL6~~
+* ~~Ubuntu 11.10~~
+* ~~Ubuntu 12.04 LTS~~
+* ~~Ubuntu 14.04 LTS~~
+
+
 # One liners
 
 Obviously inspect the script to see what it does before you run it. Note that it
@@ -110,3 +113,26 @@ contexts, start/stop, scheduling and tagging. I keep a separate context for
 work, home, someday; I defer tasks using the wait/schedule/due attributes. Also
 I think it's important not to put tasks on the queue for the sake of it. Only
 put tasks on the queue if you need to track them.
+
+
+# Latency
+
+The lowest possible latency is a target for my workflow and this repository.
+Too many user interfaces waste time on stupid animations or are just generally
+slow; working with a setup that is perceptually instantaneous is very pleasant
+and makes other systems feel irritating to use once you are familiar with the
+experience. Beyond the configuration here, here are some other things that
+_may_ help reduce latency:
+
+* Use an accelerated terminal such as `kitty` or `alacritty`
+* Use a keyboard with a fast polling rate and minimal debounce time. A lot of
+  gaming keyboards such as the Corsair K70 are optimised for this. MX Speed
+  switches may also help.
+* Adjust keyboard repeat rate to the lowest setting
+* Use a monitor with low latency and high refresh rate. Again, gaming monitors
+  are usually optimised for this.
+* Mitigate [Bufferbloat][6]
+
+
+[6]: https://www.bufferbloat.net/projects/bloat/wiki/What_can_I_do_about_Bufferbloat/
+
