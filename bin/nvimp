@@ -1,20 +1,42 @@
-#!/bin/bash
+#!/usr/bin/env python
 # Opens nvim if available, else vim.
 # Adds -p flag to open files in tabs.
 # Set $EDITOR to nvimp
 # Required as $EDITOR does not support args, and logic for nvim was replicated across bash, fish, zsh.
+# also, rgfzf can sometimes pass duplicates if there are multiple matches. It's
+# convenient and safe to fix here as it won't affect any sane usage of vim.
+from __future__ import print_function
+import sys
+import os
 
-# useful if FZF (rgfzf etc) returns no results
-# I know this is probably controversial as nvimp is set to wrap vim/nvim via
-# alias. However it fits my workflow of always starting vim with files as args.
-if [[ $# -eq 0 ]] ; then
-    echo "No files to edit"
-    exit 1
-fi
+# useful if FZF (rgfzf etc) returns no results
+if len(sys.argv) == 1:
+    print("No files to edit")
+    sys.exit(1)
 
-if which nvim > /dev/null; then
-    exec nvim -p "$@"
-else
-    exec vim -p "$@"
-fi
+def is_exe(fpath):
+    return os.path.isfile(fpath) and os.access(fpath, os.X_OK)
 
+def which(cmd):
+    for path in os.environ["PATH"].split(os.pathsep):
+        exe = os.path.join(path, cmd)
+
+        if is_exe(exe):
+            return exe
+
+# iterate to preserve order
+seen = set()
+argv = list()
+
+for arg in sys.argv[1:]:
+    if arg not in seen:
+        argv.append(arg)
+        seen.add(arg)
+
+cmd_path = which('nvim') or which('vim')
+
+if cmd_path is None:
+    print("Neither vim nor nvim found")
+    sys.exit(1)
+
+os.execl(cmd_path, os.path.basename(cmd_path), '-p', *argv)
