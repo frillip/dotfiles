@@ -8,4 +8,4 @@ fi
 
 # tty required, see GNU xargs man page
 # Note that BSD args does not allow the delimiter to be \n so \0 must be used with the -0 option.
-rg --color=always "$@" | fzf --multi --ansi | cut -d ':' -f 1 | tr '\n' '\0' | exec xargs -0 sh -c 'exec $0 "$@" </dev/tty' $EDITOR
+rg --smart-case --hidden --ignore-file=~/.rgignore --color=always "$@" | fzf --multi --ansi | cut -d ':' -f 1 | tr '\n' '\0' | exec xargs -0 sh -c 'exec $0 "$@" </dev/tty' $EDITOR

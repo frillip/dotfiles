@@ -18,6 +18,7 @@ alias ls='ls --color=auto'
 # don't use URL to create filename (do I really want a file called
 # unetbootin-source-494.tar.gz?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Funetbootin%2Ffiles%2FUNetbootin%2F494%2F&ts=1391695063&use_mirror=heanet?)
 alias wget='wget --content-disposition'
+alias rg="rg --smart-case --hidden --ignore-file=~/.rgignore"
 
 # COMMON SHORTCUTS
 alias sagi='sudo apt-get install'

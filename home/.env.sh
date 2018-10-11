@@ -7,6 +7,5 @@ export LANG=en_GB.UTF-8
 export BC_ENV_ARGS="~/.bcrc -l"
 export GCC_COLORS=1
 # note that ~ does not expand in .ripgreprc
-export FZF_DEFAULT_COMMAND="rg --files --hidden --ignore-file=~/.rgignore"
-export FZF_CTRL_T_COMMAND="rg --files --hidden --ignore-file=~/.rgignore"
-export RIPGREP_CONFIG_PATH=~/.ripgreprc
+export FZF_DEFAULT_COMMAND="rg --smart-case --files --hidden --ignore-file=~/.rgignore"
+export FZF_CTRL_T_COMMAND="rg --smart-case --files --hidden --ignore-file=~/.rgignore"
