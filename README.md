@@ -128,6 +128,8 @@ _may_ help reduce latency:
 * Use a keyboard with a fast polling rate and minimal debounce time. A lot of
   gaming keyboards such as the Corsair K70 are optimised for this. MX Speed
   switches may also help.
+* Turn all animations off where possible
+* Use a SSD (preferably NVMe m.2 PCI-E based one)
 * Adjust keyboard repeat rate to the lowest setting
 * Use a monitor with low latency and high refresh rate. Again, gaming monitors
   are usually optimised for this.
