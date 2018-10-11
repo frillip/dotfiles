@@ -205,15 +205,6 @@ function tm {
 	tmux attach -d || tmux
 }
 
-# patches for Mac OS X
-PLATFORM=$(uname)
-if [[ "$PLATFORM" == 'Darwin' ]]; then
-	#alias ls='ls -G'
-	unalias ls
-	export CLICOLOR=1
-	export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
-fi
-
 # cd then ls
 function cd {
 	builtin cd "$@" && ls

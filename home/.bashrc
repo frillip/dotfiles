@@ -196,20 +196,10 @@ function _deferred {
 	#complete -o default -W 'example.com example.net' ssh scp ping
 }
 
-# patches for Mac OS X
-PLATFORM=`uname`
-if [ "$PLATFORM" == 'Darwin' ]; then
-	#alias ls='ls -G'
-	unalias ls
-	export CLICOLOR=1
-	export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
-fi
-
 # cd then ls
 function cd {
 	builtin cd "$@" && ls
 }
-
 
 # fix backspace on some terminals
 stty erase ^?

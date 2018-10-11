@@ -80,17 +80,6 @@ function tm
 	tmux attach -d; or tmux
 end
 
-# patches for Mac OS X
-set PLATFORM (uname)
-if test "$PLATFORM" = 'Darwin'
-	alias ls='ls -G'
-	#unalias ls
-	# unalias is broken...
-	#alias ls=ls
-	set -x CLICOLOR 1
-	set -x LSCOLORS gxBxhxDxfxhxhxhxhxcxcx
-end
-
 function cd
 	builtin cd $argv
 	and ls
