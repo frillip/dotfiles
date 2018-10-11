@@ -1,7 +1,7 @@
 #!/bin/bash
 # This script installs dependencies required by dotfiles, and then the configuration files with git repo.
 
-# caveats: nvim isn't practical on all platforms
+# CAVEAT: nvim not installed on raspbian (apt version too old)
 
 set -e
 set -x
