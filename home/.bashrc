@@ -3,6 +3,11 @@ source ~/.env.sh
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+if [ -z $TMUX ] && test 0$(tput colors 2>/dev/null) -ne 256; then
+	echo -e "\e[00;31m> TERM not known. Defaulting to xterm-256color.\e[00m"
+	export TERM=xterm-256color
+fi
+
 # only on new shell, fail silently. Must be non-invasive.
 [ ! $TMUX ] && ~/bin/server-splash 2>/dev/null
 

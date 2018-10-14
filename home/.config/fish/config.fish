@@ -13,6 +13,13 @@ end
 
 status --is-interactive; or exit 0
 
+if begin; test -z $TMUX ; and test (tput colors) -ne 256; end
+	set -x TERM xterm-256color
+	set_color red
+	echo "> TERM not known. Defaulting to xterm-256color."
+	set_color normal
+end
+
 # only on new shell, fail silently. Must be non-invasive.
 test ! $TMUX; and ~/bin/server-splash ^/dev/null
 
