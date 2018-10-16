@@ -54,6 +54,7 @@ elif grep -q Ubuntu /etc/issue || grep -q Raspbian /etc/issue; then
     if grep -q Ubuntu /etc/issue; then
         sudo -E apt-add-repository multiverse
         sudo -E apt-get -y install language-pack-en
+        sudo -E apt-get -y install curl
         # FYI -- ripgrep is an official 18.04 package
         curl -L https://github.com/BurntSushi/ripgrep/releases/download/0.10.0/ripgrep_0.10.0_amd64.deb > /tmp/ripgrep.deb
         sudo dpkg -i /tmp/ripgrep.deb
