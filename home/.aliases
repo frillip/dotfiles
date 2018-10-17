@@ -55,13 +55,16 @@ alias sudo="sudo "
 # namespace???) so force-choose gpg2, which is faster due to AVX etc.
 alias gpg=gpg2
 
+# wrappers
+alias vim=nvimp
+alias scp=_scp
+
 # TYPO FIXES
 alias sl=ls
 alias c=cd
 alias xs=cd
 alias cim=nvimp
 alias bim=nvimp
-alias vim=nvimp
 alias nom=npm
 alias gi=git
 alias cd..='cd ..'
