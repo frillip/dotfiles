@@ -4,7 +4,7 @@ Edits history to deduplicate, leaving the last occurrence of each command. Also 
 
 To install, add this to .bashrc:
 
-    trap "~/.local/bin/cleanup-history.py ~/.bash_history" EXIT
+    trap "~/.local/bin/cleanup-history ~/.bash_history" EXIT
 
 """
 from sys import argv

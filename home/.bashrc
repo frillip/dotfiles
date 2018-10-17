@@ -28,7 +28,7 @@ export SHELL=$(which bash)
 echo -ne "\n\033[37mWelcome to $HOSTNAME, $USER!\033[0m "
 
 # set from hostname
-export SYSTEM_COLOUR=$(~/bin/system-colour.py $HOSTNAME)
+export SYSTEM_COLOUR=$(~/bin/system-colour $HOSTNAME)
 [ $TMUX ] && tmux set -g status-left-bg colour${SYSTEM_COLOUR} &>/dev/null
 
 if [ $USER == root ]; then
@@ -229,4 +229,4 @@ export GPG_TTY=$(tty)
 # http://superuser.com/questions/267771/bash-completion-makes-bash-start-slowly
 trap '_deferred 2>/dev/null; trap USR1' USR1
 { sleep 0.1 ; builtin kill -USR1 $$ ; } & disown
-trap "~/.local/bin/cleanup-history.py ~/.history" EXIT
+trap "~/.local/bin/cleanup-history ~/.history" EXIT

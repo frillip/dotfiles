@@ -119,7 +119,7 @@ function _tmux_update_env {
 export HOSTNAME=$(hostname -s)
 
 # set from hostname
-export SYSTEM_COLOUR=$(~/bin/system-colour.py $HOSTNAME)
+export SYSTEM_COLOUR=$(~/bin/system-colour $HOSTNAME)
 [ $TMUX ] && tmux set -g status-left-bg colour${SYSTEM_COLOUR} &>/dev/null
 
 
@@ -228,4 +228,4 @@ export GPG_TTY=$(tty)
 uptime
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-trap "~/.local/bin/cleanup-history.py ~/.history" EXIT
+trap "~/.local/bin/cleanup-history ~/.history" EXIT
