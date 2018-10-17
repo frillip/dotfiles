@@ -206,7 +206,8 @@ stty erase ^?
 #stty erase ^H
 
 [ -x /usr/bin/keychain ] && [ -r ~/.ssh/id_rsa ] && eval `keychain --nogui --quiet --eval --inherit any ~/.ssh/id_rsa`
-test -x /usr/bin/dircolors && eval $(dircolors ~/.dir_colors)
+
+which dircolors &> /dev/null &&  eval $(dircolors ~/.dir_colors)
 
 uptime
 

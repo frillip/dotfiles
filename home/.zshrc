@@ -211,7 +211,7 @@ function cd {
 }
 
 [ -x /usr/bin/keychain ] && [ -r ~/.ssh/id_rsa ] && eval `keychain --nogui --quiet --eval --inherit any ~/.ssh/id_rsa`
-test -x /usr/bin/dircolors && eval $(dircolors ~/.dir_colors)
+which dircolors &> /dev/null &&  eval $(dircolors ~/.dir_colors)
 
 # Disable stupid flow control. Ctrl+S can disable the terminal, requiring
 # Ctrl+Q to restore. It can result in an apparent hung terminal, if
