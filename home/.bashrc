@@ -205,8 +205,6 @@ stty erase ^?
 
 which dircolors &> /dev/null &&  eval $(dircolors ~/.dir_colors)
 
-uptime
-
 # Disable stupid flow control. Ctrl+S can disable the terminal, requiring
 # Ctrl+Q to restore. It can result in an apparent hung terminal, if
 # accidentally pressed.

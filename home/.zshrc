@@ -223,7 +223,5 @@ stty start undef
 # https://www.gnupg.org/documentation/manuals/gnupg/Common-Problems.html
 export GPG_TTY=$(tty)
 
-uptime
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 trap "~/.local/bin/cleanup-history ~/.history" EXIT

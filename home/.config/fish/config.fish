@@ -89,11 +89,6 @@ test -x /usr/bin/keychain
 	and test -r ~/.ssh/id_rsa
 	and keychain --nogui --quiet --eval --inherit any ~/.ssh/id_rsa | .
 
-# these functions are too small to warrant a separate file
-function fish_greeting
-    uptime
-end
-
 
 function fish_title --description 'Set terminal (not tmux) title'
 	# title of terminal
