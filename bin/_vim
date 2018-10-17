@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Opens nvim if available, else vim.
 # Adds -p flag to open files in tabs.
-# Set $EDITOR to nvimp
+# Set $EDITOR to _vim
 # Required as $EDITOR does not support args, and logic for nvim was replicated across bash, fish, zsh.
 # also, rgfzf can sometimes pass duplicates if there are multiple matches. It's
 # convenient and safe to fix here as it won't affect any sane usage of vim.
