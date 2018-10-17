@@ -82,7 +82,7 @@ echo;echo
 
 # set from hostname
 
-export SYSTEM_COLOUR=$(~/bin/system-colour $HOSTNAME)
+export SYSTEM_COLOUR=$(~/.local/bin/system-colour $HOSTNAME)
 
 
 echo -ne "\033[38;5;${SYSTEM_COLOUR}m"

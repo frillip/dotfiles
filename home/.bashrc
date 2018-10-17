@@ -28,7 +28,7 @@ export SHELL=$(which bash)
 echo -ne "\n\033[37mWelcome to $HOSTNAME, $USER!\033[0m "
 
 # set from hostname
-export SYSTEM_COLOUR=$(~/bin/system-colour $HOSTNAME)
+export SYSTEM_COLOUR=$(~/.local/bin/system-colour $HOSTNAME)
 [ $TMUX ] && tmux set -g status-left-bg colour${SYSTEM_COLOUR} &>/dev/null
 
 if [ $USER == root ]; then

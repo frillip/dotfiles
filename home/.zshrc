@@ -119,7 +119,7 @@ function _tmux_update_env {
 export HOSTNAME=$(hostname -s)
 
 # set from hostname
-export SYSTEM_COLOUR=$(~/bin/system-colour $HOSTNAME)
+export SYSTEM_COLOUR=$(~/.local/bin/system-colour $HOSTNAME)
 [ $TMUX ] && tmux set -g status-left-bg colour${SYSTEM_COLOUR} &>/dev/null
 
 

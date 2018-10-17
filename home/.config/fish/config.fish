@@ -27,7 +27,7 @@ end
 set -x HOSTNAME (hostname -s)
 
 # taken from hostname
-set -x SYSTEM_COLOUR (python ~/bin/system-colour $HOSTNAME)
+set -x SYSTEM_COLOUR (python ~/.local/bin/system-colour $HOSTNAME)
 test $TMUX; and tmux set -g status-left-bg colour{$SYSTEM_COLOUR} ^/dev/null >/dev/null
 
 if test $USER = root
