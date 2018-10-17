@@ -1,11 +1,29 @@
-# Features
+# Noteworthy bindings
 
+## Shell
+* `CTRL+p`: search current directory with FZF and launch editor with results. Tab to select multiple.
+* `r <string>`: search current directory with ripgrep for files containing `<string>`, filter with FZF and launch editor with results. Tab to select multiple.
+* `CTRL+r` history search using fzf
+* `tm`: Launch or connect tmux single session. This is automatic if there is already an unconnected session.
+
+See `home/.aliases` for and `bin/` for more handy shortcuts/wrappers.
+
+## Vim
+* `CTRL+p` search current directory with FZF and launch editor with results. Tab to select multiple.
+
+## Tmux
+
+Tmux has been configured to follow vim bindings where possible. Check `home/.tmux.conf` for a walk-through.
+
+# Noteworthy features
+* Workflows and application configuration profiled for speed. See section on Latency for more information.
+* Prompt/hostname colour based on hostname to make it easy to distinguish between hosts.
 
 # Software
 
 General:
 
-* `vim`/`neovim` : text editor
+* `vim`/`neovim` : text editor (theme: gruvbox)
 * `bash/zsh/fish` : Shells, used interchangibly depending on platform. Fish
 generates completions from man pages! (but CTRL+R reverse-i-search isn't there
 so I don't use it)
@@ -31,12 +49,7 @@ so I don't use it)
 * `httrack` : a website crawler better than wget (i.e. it works)
 * `gruvbox` : A calm colorscheme with good enough contrast. I moved from solarised.
 * `kitty` : GPU accelerated terminal (see also: `alacritty`) Recommended font: https://github.com/adobe-fonts/source-code-pro Tip: Minimise keyboard repeat delay and maximise keyboard repeat rate for a faster experience. Latency is everything.  NOTE Alacrity/kitty.  
-# shell bindings
 
-* `tm` will start or attach to the first `tmux` session. If you're on the only
-  shell, `tmux` session 0 will automatically attach.
-* `CTRL+p` will launch `vim` in fzf mode, also works inside vim
-* `CTRL+r` history search using fzf
 * `CTRL+s` will prepend `sudo` to the prompt and move the cursor to the end of the prompt
 * `tryforever <cmd...>` will run a command in a loop until it fails
 * `kill <tab>` will use fzf to find a process to kill
@@ -44,14 +57,8 @@ so I don't use it)
 * `ssh **<tab>` will use fzf to find a host to ssh to
 * history is globally shared, allowing CTRL+R search
 
-See `home/.aliases` and `bin/` for some useful shortcuts.
-
 
 ![Screenshot](etc/screenshot.png "Why do all terminal screenshots show top or htop running?")
-
-As a bonus, the prompt/hostname colour changes with the hostname so it's easier
-to differentiate between hosts.
-
 
 [2]: http://unix.stackexchange.com/questions/12107/how-to-unfreeze-after-accidentally-pressing-ctrl-s-in-a-terminal
 [3]: https://github.com/fish-shell/fish-shell/issues/814
