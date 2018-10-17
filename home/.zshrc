@@ -137,8 +137,6 @@ $ "
 # if you call a different shell, this does not happen automatically. WTF?
 export SHELL=$(which zsh)
 
-echo "\nWelcome to $HOSTNAME, $USER! "
-
 # AUTOMATIC TMUX
 # must not launch tmux inside tmux (no memes please)
 # must be installed/single session/no clients

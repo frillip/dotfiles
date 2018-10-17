@@ -91,7 +91,6 @@ test -x /usr/bin/keychain
 
 # these functions are too small to warrant a separate file
 function fish_greeting
-	echo \nWelcome to $HOSTNAME, $USER!
     uptime
 end
 

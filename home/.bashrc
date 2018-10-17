@@ -23,10 +23,6 @@ export HOSTNAME=$(hostname -s)
 # if you call a different shell, this does not happen automatically. WTF?
 export SHELL=$(which bash)
 
-# this bashrc takes a sec or so thanks to all the completions, so print this first
-# Now this doesn't matter thanks to the deferred() system
-echo -ne "\n\033[37mWelcome to $HOSTNAME, $USER!\033[0m "
-
 # set from hostname
 export SYSTEM_COLOUR=$(~/.local/bin/system-colour $HOSTNAME)
 [ $TMUX ] && tmux set -g status-left-bg colour${SYSTEM_COLOUR} &>/dev/null
