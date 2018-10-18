@@ -110,9 +110,16 @@ bindkey '^[[B' history-substring-search-down
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 function _tmux_update_env {
+    # tmux must be running
+    [ $TMUX ] || return
+
+    # must be remote host (else it clobbers keychain, which runs local only)
+    tmux show-environment -g | grep -q SSH_CONNECTION || return
+
     # when an SSH connection is re-established, so is the agent connection.
     # Reload it automatically.
-    [ $TMUX ] && eval $(tmux show-env | grep 'SSH_AUTH_SOCK=\|DISPLAY=' | sed 's/^/export /g')
+    eval $(tmux show-environment -s | grep 'SSH_AUTH_SOCK\|DISPLAY')
+    echo "Synced env"
 }
 
 # Sometimes not set or fully qualified; simple name preferred.
@@ -208,7 +215,12 @@ function cd {
 	builtin cd "$@" && ls
 }
 
-[ -x /usr/bin/keychain ] && [ -r ~/.ssh/id_rsa ] && eval `keychain --nogui --quiet --eval --inherit any ~/.ssh/id_rsa`
+# take over SSH keychain (with gpg-agent soon) but only on local machine, not remote ssh machine
+# keychain used in a non-invasive way where it's up to you to add your keys to the agent.
+test -x $SSH_CONNECTION && \
+    which keychain &>/dev/null && \
+    eval `keychain --ignore-missing --nogui --noask --eval --noinherit --agents ssh`
+
 which dircolors &> /dev/null &&  eval $(dircolors ~/.dir_colors)
 
 # Disable stupid flow control. Ctrl+S can disable the terminal, requiring
